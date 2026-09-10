@@ -20,7 +20,10 @@
     body{margin:0;background:var(--ivory);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
     a{color:inherit}
     .grain{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-    .hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#151311}
+    .music-toggle{position:fixed;right:20px;bottom:20px;z-index:30;width:50px;height:50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(25,20,16,.62);backdrop-filter:blur(10px);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.22);transition:.25s}
+.music-toggle:hover{transform:scale(1.06)} .music-toggle.playing{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(0,0,0,.22)}50%{box-shadow:0 8px 36px rgba(216,189,145,.5)}}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#151311}
     .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%;filter:saturate(.82) contrast(.96)}
     .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,8,.18),rgba(12,10,8,.28) 48%,rgba(12,10,8,.78))}
     .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:40px 20px;animation:rise 1.4s ease both}
@@ -90,6 +93,8 @@
 </head>
 <body>
 <div class="grain"></div>
+<audio id="bgMusic" src="music/engagement-song.mp3" loop preload="auto"></audio>
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Play or pause music"><span id="musicIcon">♫</span></button>
 
 <header class="hero">
   <img src="images/photo-03.webp" alt="Jenishker and Keerthy by the sea" fetchpriority="high">
@@ -200,7 +205,17 @@
 <footer>Jenishker &amp; Keerthy · Engagement 2026</footer>
 
 <script>
-  const target = new Date("2026-11-22T11:00:00+05:30").getTime();
+  const bgMusic=document.querySelector("#bgMusic"),musicToggle=document.querySelector("#musicToggle"),musicIcon=document.querySelector("#musicIcon");
+function setMusicState(playing){musicToggle.classList.toggle("playing",playing);musicIcon.textContent=playing?"♫":"🔇";}
+async function startMusic(){try{await bgMusic.play();setMusicState(true);return true}catch(e){setMusicState(false);return false;}}
+startMusic();
+musicToggle.addEventListener("click",async()=>{if(bgMusic.paused)await startMusic();else{bgMusic.pause();setMusicState(false);}});
+const unlockMusic=async()=>{if(bgMusic.paused)await startMusic();};
+document.addEventListener("pointerdown",unlockMusic,{once:true});
+document.addEventListener("touchstart",unlockMusic,{once:true});
+document.addEventListener("keydown",unlockMusic,{once:true});
+
+const target = new Date("2026-11-22T11:00:00+05:30").getTime();
   function tick(){
     const now = Date.now(), diff = Math.max(0, target-now);
     const d = Math.floor(diff/86400000);
