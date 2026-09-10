@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5eee4">
+  <meta name="description" content="An elegant engagement invitation for Jenishker & Keerthy — 22 November 2026, Nagercoil.">
+  <title>Jenishker & Keerthy — Engagement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ivory:#fbf7f0; --paper:#f5eee4; --ink:#27231f; --muted:#766c62;
+      --gold:#b48a4c; --gold-soft:#d8bd91; --line:rgba(100,75,42,.20);
+      --shadow:0 24px 80px rgba(45,32,18,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ivory);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+    a{color:inherit}
+    .grain{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+    .hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#151311}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%;filter:saturate(.82) contrast(.96)}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,8,.18),rgba(12,10,8,.28) 48%,rgba(12,10,8,.78))}
+    .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:40px 20px;animation:rise 1.4s ease both}
+    .eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:11px;font-weight:600;opacity:.9}
+    h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(58px,12vw,126px);line-height:.78;margin:24px 0 18px;letter-spacing:-.045em}
+    .amp{font-family:"Great Vibes",cursive;font-size:.62em;color:#e8cc9e;vertical-align:-.06em}
+    .hero-date{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,4vw,34px);letter-spacing:.08em}
+    .scroll{margin-top:58px;display:inline-flex;flex-direction:column;align-items:center;gap:12px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.82}
+    .scroll span{width:1px;height:54px;background:linear-gradient(#fff,transparent)}
+    section{position:relative;padding:100px 7vw}
+    .intro{background:var(--ivory);text-align:center}
+    .script{font-family:"Great Vibes",cursive;color:var(--gold);font-size:42px}
+    .title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,7vw,76px);font-weight:500;line-height:.95;margin:8px 0 20px}
+    .lead{max-width:670px;margin:0 auto;color:var(--muted);line-height:1.9;font-size:15px}
+    .family-row{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:44px;color:var(--muted);font-size:13px}
+    .family-row div{min-width:190px}
+    .family-row strong{display:block;color:var(--ink);font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;margin-top:5px}
+    .photo-feature{padding-top:20px;background:var(--ivory)}
+    .feature-wrap{max-width:1050px;margin:auto;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:clamp(28px,6vw,90px)}
+    .feature-image{border-radius:260px 260px 18px 18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+    .feature-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .feature-copy{padding:20px}
+    .feature-copy p{color:var(--muted);line-height:1.9;font-size:15px}
+    .ornament{font-size:24px;color:var(--gold);letter-spacing:.4em}
+    .event{background:var(--paper);text-align:center}
+    .event-card{max-width:900px;margin:38px auto 0;padding:48px 28px;border:1px solid var(--line);background:rgba(255,255,255,.35);position:relative}
+    .event-card:before,.event-card:after{content:"";position:absolute;width:45px;height:45px;border-color:var(--gold-soft);border-style:solid}
+    .event-card:before{left:12px;top:12px;border-width:1px 0 0 1px}.event-card:after{right:12px;bottom:12px;border-width:0 1px 1px 0}
+    .event-name{font-family:"Cormorant Garamond",serif;font-size:38px}
+    .event-meta{display:flex;justify-content:center;gap:0;margin:30px auto;max-width:650px;flex-wrap:wrap}
+    .meta{padding:12px 32px;border-right:1px solid var(--line);min-width:180px}.meta:last-child{border-right:0}
+    .meta small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:10px;margin-bottom:8px}.meta strong{font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600}
+    .address{color:var(--muted);line-height:1.7;font-size:13px;max-width:560px;margin:auto}
+    .btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border:1px solid var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:600;transition:.25s}
+    .btn:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+    .btn.gold{border-color:var(--gold);background:var(--gold);color:#fff}
+    .countdown{background:#25211d;color:#f8f0e4;text-align:center}
+    .countdown .title{color:#fff}
+    .count-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:760px;margin:42px auto 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+    .counter{padding:28px 10px;border-right:1px solid rgba(255,255,255,.12)}.counter:last-child{border:0}
+    .num{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,8vw,70px);font-weight:500;line-height:1}.label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#cbbca7;margin-top:8px}
+    .gallery{background:var(--ivory)}
+    .gallery-head{text-align:center;margin-bottom:48px}
+    .gallery-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .g{overflow:hidden;min-height:250px;position:relative;background:#ddd}
+    .g img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+    .g:hover img{transform:scale(1.045)}
+    .g:nth-child(1){grid-column:span 7;grid-row:span 2}.g:nth-child(2){grid-column:span 5}.g:nth-child(3){grid-column:span 5}
+    .g:nth-child(4){grid-column:span 4}.g:nth-child(5){grid-column:span 4}.g:nth-child(6){grid-column:span 4}
+    .g:nth-child(7){grid-column:span 5}.g:nth-child(8){grid-column:span 7}
+    .g:nth-child(n+9){grid-column:span 3}
+    .closing{text-align:center;background:var(--paper);padding-bottom:120px}
+    .ring{width:78px;height:78px;border:1px solid var(--gold);border-radius:50%;margin:0 auto 28px;display:grid;place-items:center;color:var(--gold);font-size:27px;position:relative}
+    .ring:before{content:"";position:absolute;width:46px;height:46px;border:1px solid var(--gold-soft);border-radius:50%}
+    footer{text-align:center;padding:25px;color:#9a8d7f;background:var(--paper);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
+    @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    @media(max-width:760px){
+      section{padding:76px 20px}.hero img{object-position:55% center}
+      .feature-wrap{grid-template-columns:1fr}.feature-copy{padding:0 8px;text-align:center}
+      .event-card{padding:38px 18px}.meta{border-right:0;border-bottom:1px solid var(--line);width:100%}.meta:last-child{border-bottom:0}
+      .count-grid{grid-template-columns:repeat(2,1fr)}.counter:nth-child(2){border-right:0}.counter:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+      .gallery-grid{display:grid;grid-template-columns:1fr 1fr}.g,.g:nth-child(n){grid-column:span 1;grid-row:span 1;min-height:210px}.g:nth-child(1),.g:nth-child(4),.g:nth-child(8){grid-column:span 2;min-height:310px}
+    }
+  </style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="hero">
+  <img src="images/photo-03.webp" alt="Jenishker and Keerthy by the sea" fetchpriority="high">
+  <div class="hero-content">
+    <div class="eyebrow">An engagement celebration</div>
+    <h1>Jenishker <span class="amp">&amp;</span> Keerthy</h1>
+    <div class="hero-date">22 · 11 · 2026</div>
+    <div class="scroll">Scroll to discover<span></span></div>
+  </div>
+</header>
+
+<section class="intro reveal">
+  <div class="script">With love,</div>
+  <div class="title">A new chapter begins</div>
+  <p class="lead">
+    Together with the blessings of our families, we invite you to celebrate
+    the beautiful beginning of our journey — our engagement.
+    Your presence will make our day even more special.
+  </p>
+  <div class="family-row">
+    <div>Son of<strong>Slevan</strong></div>
+    <div>♥</div>
+    <div>Daughter of<strong>Subash Balasubramanium</strong></div>
+  </div>
+</section>
+
+<section class="photo-feature reveal">
+  <div class="feature-wrap">
+    <div class="feature-image"><img src="images/photo-04.webp" alt="Jenishker and Keerthy"></div>
+    <div class="feature-copy">
+      <div class="ornament">✦ ✦ ✦</div>
+      <div class="script">Two hearts</div>
+      <div class="title">One beautiful beginning</div>
+      <p>
+        From little moments to unforgettable memories, every step has brought
+        us here. Now we begin a new story, surrounded by the people we love.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="event reveal" id="event">
+  <div class="script">Mark your calendar</div>
+  <div class="title">The Engagement</div>
+  <div class="event-card">
+    <div class="event-name">Jenishker &amp; Keerthy</div>
+    <div class="event-meta">
+      <div class="meta"><small>Date</small><strong>Sunday, 22 November 2026</strong></div>
+      <div class="meta"><small>Time</small><strong>11:00 AM</strong></div>
+      <div class="meta"><small>Venue</small><strong>Santhosh Bhavan</strong></div>
+    </div>
+    <p class="address">
+      Near Reliance Mall, opposite to SBI Bank,<br>
+      Nagercoil, Kanyakumari — 629602
+    </p>
+    <div class="btns">
+      <a class="btn gold" href="https://maps.app.goo.gl/7UzVYLmFHhNZ9o9v5" target="_blank" rel="noopener">Get Directions</a>
+      <a class="btn" href="#gallery">View Memories</a>
+    </div>
+  </div>
+</section>
+
+<section class="countdown reveal">
+  <div class="script">Counting the moments</div>
+  <div class="title">Until we celebrate</div>
+  <div class="count-grid" aria-live="polite">
+    <div class="counter"><div class="num" id="days">--</div><div class="label">Days</div></div>
+    <div class="counter"><div class="num" id="hours">--</div><div class="label">Hours</div></div>
+    <div class="counter"><div class="num" id="minutes">--</div><div class="label">Minutes</div></div>
+    <div class="counter"><div class="num" id="seconds">--</div><div class="label">Seconds</div></div>
+  </div>
+</section>
+
+<section class="gallery reveal" id="gallery">
+  <div class="gallery-head">
+    <div class="script">A few memories</div>
+    <div class="title">Our little world</div>
+  </div>
+  <div class="gallery-grid">
+    <div class="g"><img src="images/photo-03.webp" alt="Couple by the sea" loading="lazy"></div>
+    <div class="g"><img src="images/photo-02.webp" alt="Jenishker with flowers" loading="lazy"></div>
+    <div class="g"><img src="images/photo-04.webp" alt="Couple together" loading="lazy"></div>
+    <div class="g"><img src="images/photo-01.webp" alt="Jenishker by the sea" loading="lazy"></div>
+    <div class="g"><img src="images/photo-06.webp" alt="Keerthy with a rabbit" loading="lazy"></div>
+    <div class="g"><img src="images/photo-07.webp" alt="Keerthy with birds" loading="lazy"></div>
+    <div class="g"><img src="images/photo-08.webp" alt="Keerthy with a rabbit" loading="lazy"></div>
+    <div class="g"><img src="images/photo-05.webp" alt="Jenishker with a parrot" loading="lazy"></div>
+    <div class="g"><img src="images/photo-09.webp" alt="Jenishker and Keerthy" loading="lazy"></div>
+    <div class="g"><img src="images/photo-10.webp" alt="Couple memory" loading="lazy"></div>
+    <div class="g"><img src="images/photo-11.webp" alt="Keerthy portrait" loading="lazy"></div>
+    <div class="g"><img src="images/photo-12.webp" alt="Couple memory" loading="lazy"></div>
+    <div class="g"><img src="images/photo-13.webp" alt="Keerthy memory" loading="lazy"></div>
+    <div class="g"><img src="images/photo-14.webp" alt="Couple memory" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="closing reveal">
+  <div class="ring">♡</div>
+  <div class="script">We can't wait to celebrate with you</div>
+  <div class="title">See you there</div>
+  <p class="lead">22 November 2026 · 11:00 AM · Santhosh Bhavan, Nagercoil</p>
+  <div class="btns">
+    <a class="btn gold" href="https://maps.app.goo.gl/7UzVYLmFHhNZ9o9v5" target="_blank" rel="noopener">Open in Google Maps</a>
+    <button class="btn" id="shareBtn" type="button">Share Invitation</button>
+  </div>
+</section>
+
+<footer>Jenishker &amp; Keerthy · Engagement 2026</footer>
+
+<script>
+  const target = new Date("2026-11-22T11:00:00+05:30").getTime();
+  function tick(){
+    const now = Date.now(), diff = Math.max(0, target-now);
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor(diff%86400000/3600000);
+    const m = Math.floor(diff%3600000/60000);
+    const s = Math.floor(diff%60000/1000);
+    document.querySelector("#days").textContent=String(d).padStart(2,"0");
+    document.querySelector("#hours").textContent=String(h).padStart(2,"0");
+    document.querySelector("#minutes").textContent=String(m).padStart(2,"0");
+    document.querySelector("#seconds").textContent=String(s).padStart(2,"0");
+  }
+  tick(); setInterval(tick,1000);
+
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+  document.querySelector("#shareBtn").addEventListener("click", async ()=>{
+    const data={title:"Jenishker & Keerthy — Engagement",text:"Join us for our engagement on 22 November 2026 at 11:00 AM, Santhosh Bhavan, Nagercoil.",url:location.href};
+    try{
+      if(navigator.share) await navigator.share(data);
+      else { await navigator.clipboard.writeText(location.href); alert("Invitation link copied!"); }
+    }catch(e){}
+  });
+</script>
+</body>
+</html>
