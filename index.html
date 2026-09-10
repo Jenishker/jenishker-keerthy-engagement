@@ -20,7 +20,10 @@
     body{margin:0;background:var(--ivory);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
     a{color:inherit}
     .grain{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-    .music-toggle{position:fixed;right:20px;bottom:20px;z-index:30;width:50px;height:50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(25,20,16,.62);backdrop-filter:blur(10px);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.22);transition:.25s}
+    .welcome{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#fffaf2 0,#f5eee4 48%,#e8dccb 100%);overflow:hidden;transition:opacity .9s ease,visibility .9s ease;padding:clamp(18px,4vw,48px)}
+    .welcome:before,.welcome:after{content:"";position:absolute;border:1px solid rgba(180,138,76,.28);border-radius:50%;width:70vw;height:70vw;max-width:900px;max-height:900px;animation:floatRing 8s ease-in-out infinite}.welcome:after{width:44vw;height:44vw;animation-delay:-3s}
+    .welcome.hide{opacity:0;visibility:hidden;pointer-events:none}.welcome-inner{position:relative;z-index:2;text-align:center;padding:clamp(18px,4vw,38px) clamp(12px,4vw,32px);width:min(760px,100%);max-height:100%;overflow:auto;animation:welcomeRise 1.2s ease both}.infinity{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:clamp(64px,11vw,104px);line-height:.65;margin-bottom:clamp(18px,3vw,28px);font-weight:400}.welcome-kicker{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}.welcome h2{font-family:"Cormorant Garamond",serif;font-size:clamp(52px,10vw,88px);font-weight:500;line-height:.82;margin:24px 0}.welcome h2 em{font-family:"Great Vibes",cursive;color:var(--gold);font-size:.9em;font-style:normal}.welcome p{max-width:440px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.8}.welcome-names{font-family:"Cormorant Garamond",serif;font-size:clamp(25px,5vw,34px);margin-top:20px}.welcome-names span{font-family:"Great Vibes",cursive;color:var(--gold);font-size:1.25em;padding:0 5px}.welcome-countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:520px;margin:24px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.welcome-counter{padding:13px 7px;border-right:1px solid var(--line)}.welcome-counter:last-child{border-right:0}.welcome-num{font-family:"Cormorant Garamond",serif;font-size:clamp(27px,6vw,40px);line-height:1;font-weight:600}.welcome-label{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}.enter-btn{margin-top:32px;border:1px solid var(--gold);background:var(--ink);color:#fff;padding:15px 26px;min-width:210px;font:600 10px "DM Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:.3s;box-shadow:0 14px 34px rgba(39,35,31,.15)}.enter-btn span{font-size:17px;vertical-align:-2px;margin-left:10px}.enter-btn:hover{transform:translateY(-3px);background:var(--gold)}.welcome-note{margin-top:16px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9a8d7f}@keyframes welcomeRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes floatRing{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.02)}}
+    .music-toggle{position:fixed;right:clamp(16px,3vw,30px);bottom:clamp(16px,3vw,30px);z-index:40;width:64px;height:64px;border:1px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(25,20,16,.92);backdrop-filter:blur(12px);color:#fff;font-size:27px;cursor:pointer;box-shadow:0 10px 34px rgba(0,0,0,.38);transition:.25s;display:grid;place-items:center}
 .music-toggle:hover{transform:scale(1.06)} .music-toggle.playing{animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(0,0,0,.22)}50%{box-shadow:0 8px 36px rgba(216,189,145,.5)}}
 .hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:#151311}
@@ -82,17 +85,36 @@
     footer{text-align:center;padding:25px;color:#9a8d7f;background:var(--paper);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
     @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-    @media(max-width:760px){
+    @media(min-width:761px) and (max-width:1100px){section{padding:88px 5vw}.feature-wrap{gap:40px}.gallery-grid{gap:10px}.g{min-height:220px}}
+@media(max-width:520px){.welcome{padding:10px}.welcome h2{font-size:clamp(44px,14vw,66px);margin:18px 0 14px}.welcome p{font-size:13px;line-height:1.65}.welcome-names{margin-top:14px}.welcome-countdown{margin-top:18px}.welcome-counter{padding:11px 4px}.enter-btn{margin-top:24px;min-width:min(230px,90vw);padding:15px 20px}.welcome-note{margin-top:12px}.music-toggle{width:58px;height:58px;font-size:25px;right:14px;bottom:14px}}
+@media(max-width:760px){
       section{padding:76px 20px}.hero img{object-position:55% center}
       .feature-wrap{grid-template-columns:1fr}.feature-copy{padding:0 8px;text-align:center}
       .event-card{padding:38px 18px}.meta{border-right:0;border-bottom:1px solid var(--line);width:100%}.meta:last-child{border-bottom:0}
       .count-grid{grid-template-columns:repeat(2,1fr)}.counter:nth-child(2){border-right:0}.counter:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
       .gallery-grid{display:grid;grid-template-columns:1fr 1fr}.g,.g:nth-child(n){grid-column:span 1;grid-row:span 1;min-height:210px}.g:nth-child(1),.g:nth-child(4),.g:nth-child(8){grid-column:span 2;min-height:310px}
     }
-  </style>
+  @media(max-width:600px){.music-toggle{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}} </style>
 </head>
 <body>
 <div class="grain"></div>
+<div class="welcome" id="welcome">
+  <div class="welcome-inner">
+    <div class="infinity" aria-hidden="true">∞</div>
+    <div class="welcome-kicker">A beautiful beginning</div>
+    <h2>Two hearts.<br><em>One forever.</em></h2>
+    <p>With love and joy, we invite you to celebrate the engagement of</p>
+    <div class="welcome-names">Jenishker <span>&amp;</span> Keerthy</div>
+    <div class="welcome-countdown" aria-label="Countdown to the engagement">
+      <div class="welcome-counter"><div class="welcome-num" id="welcomeDays">--</div><div class="welcome-label">Days</div></div>
+      <div class="welcome-counter"><div class="welcome-num" id="welcomeHours">--</div><div class="welcome-label">Hours</div></div>
+      <div class="welcome-counter"><div class="welcome-num" id="welcomeMinutes">--</div><div class="welcome-label">Minutes</div></div>
+      <div class="welcome-counter"><div class="welcome-num" id="welcomeSeconds">--</div><div class="welcome-label">Seconds</div></div>
+    </div>
+    <button class="enter-btn" id="enterInvitation" type="button">Enter Invitation <span>→</span></button>
+    <div class="welcome-note">Tap to enter · music will begin</div>
+  </div>
+</div>
 <audio id="bgMusic" src="music/engagement-song.mp3" loop preload="auto"></audio>
 <button class="music-toggle" id="musicToggle" type="button" aria-label="Play or pause music"><span id="musicIcon">♫</span></button>
 
@@ -206,16 +228,21 @@
 
 <script>
   const bgMusic=document.querySelector("#bgMusic"),musicToggle=document.querySelector("#musicToggle"),musicIcon=document.querySelector("#musicIcon");
-function setMusicState(playing){musicToggle.classList.toggle("playing",playing);musicIcon.textContent=playing?"♫":"🔇";}
-async function startMusic(){try{await bgMusic.play();setMusicState(true);return true}catch(e){setMusicState(false);return false;}}
-startMusic();
-musicToggle.addEventListener("click",async()=>{if(bgMusic.paused)await startMusic();else{bgMusic.pause();setMusicState(false);}});
-const unlockMusic=async()=>{if(bgMusic.paused)await startMusic();};
-document.addEventListener("pointerdown",unlockMusic,{once:true});
-document.addEventListener("touchstart",unlockMusic,{once:true});
-document.addEventListener("keydown",unlockMusic,{once:true});
+  const welcome=document.querySelector("#welcome"),enterInvitation=document.querySelector("#enterInvitation");
+  function setMusicState(playing){musicToggle.classList.toggle("playing",playing);musicIcon.textContent=playing?"♫":"🔇";}
+  async function startMusic(){try{await bgMusic.play();setMusicState(true);return true}catch(e){setMusicState(false);return false;}}
+  enterInvitation.addEventListener("click",async()=>{
+    await startMusic();
+    welcome.classList.add("hide");
+    history.replaceState(null,"",location.pathname+"#invitation");
+    document.body.style.overflow="auto";
+    setTimeout(()=>document.querySelector("#event").scrollIntoView({behavior:"smooth"}),450);
+  });
+  musicToggle.addEventListener("click",async()=>{if(bgMusic.paused)await startMusic();else{bgMusic.pause();setMusicState(false);}});
+  document.body.style.overflow="hidden";
+  if(location.hash==="#invitation"){welcome.classList.add("hide");document.body.style.overflow="auto";startMusic();}
 
-const target = new Date("2026-11-22T11:00:00+05:30").getTime();
+  const target = new Date("2026-11-22T11:00:00+05:30").getTime();
   function tick(){
     const now = Date.now(), diff = Math.max(0, target-now);
     const d = Math.floor(diff/86400000);
@@ -226,6 +253,10 @@ const target = new Date("2026-11-22T11:00:00+05:30").getTime();
     document.querySelector("#hours").textContent=String(h).padStart(2,"0");
     document.querySelector("#minutes").textContent=String(m).padStart(2,"0");
     document.querySelector("#seconds").textContent=String(s).padStart(2,"0");
+    document.querySelector("#welcomeDays").textContent=String(d).padStart(2,"0");
+    document.querySelector("#welcomeHours").textContent=String(h).padStart(2,"0");
+    document.querySelector("#welcomeMinutes").textContent=String(m).padStart(2,"0");
+    document.querySelector("#welcomeSeconds").textContent=String(s).padStart(2,"0");
   }
   tick(); setInterval(tick,1000);
 
